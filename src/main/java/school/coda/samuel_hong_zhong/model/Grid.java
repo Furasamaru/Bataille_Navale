@@ -1,5 +1,7 @@
 package school.coda.samuel_hong_zhong.model;
 
+import java.util.Scanner;
+
 public class Grid {
 
     //création de la fiche tableau de jeu
@@ -9,7 +11,22 @@ public class Grid {
     String[][] coordinatesNames = new String[10][10];
 
 
-    public void main() {
+
+    public void main(String[] args) {
+
+        //fait appel (utilise) à la fonction setCoordinatesNames
+        setCoordinatesNames();
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Entrez les coordonnées x et y de la case où vous voulez tirer : ");
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        System.out.println(coordinatesNames[x][y] + " : " + board[x][y]);
+    }
+
+
+    public void setCoordinatesNames() {
 
         // boucle pour définir les coordonnées de chaque case du tableau
         for (int i = 0; i < 10; i++) {
@@ -20,6 +37,5 @@ public class Grid {
                 coordinatesNames[i][j] = columns + "" + lines;
             }
         }
-            System.out.println(coordinatesNames[5][8]);
     }
 }
