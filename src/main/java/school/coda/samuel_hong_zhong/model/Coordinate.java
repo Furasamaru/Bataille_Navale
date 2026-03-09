@@ -1,4 +1,5 @@
 package school.coda.samuel_hong_zhong.model;
 
-public record Coordinate() {
+public record Coordinate(double x , double y) {
+
 }
