@@ -44,9 +44,6 @@ public class Ship {
         return false;
     }
 
-
-//Checks if the ship is sunk.return true if all positions have been hit.
-
     public boolean isSunk() {
         return hits.size() == type.getSize();
     }
