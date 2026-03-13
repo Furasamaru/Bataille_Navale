@@ -12,7 +12,7 @@ public class Play {
 
     // Logic Models
     private interactionPlayer playerLogic;
-    private String[][] computerBoardLogic;
+    private String[][] computerBoard;
     private boolean isAttackPhase;
     private boolean end;
     public int playerTouchCount;
@@ -79,7 +79,7 @@ public class Play {
             return;
         }
 
-        String cellContent = computerBoardLogic[row][col];
+        String cellContent = computerBoard[row][col];
 
         if (cellContent == null) {
             clickedButton.setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #4682B4;");
@@ -156,7 +156,7 @@ public class Play {
         isAttackPhase = true;
         controls.setVisible(false);
         controls.setManaged(false);
-        computerBoardLogic = RandomPlacement.generateBoard();
+        computerBoard = RandomPlacement.generateBoard();
         statusLabel.setText("Tous les navires sont en place ! Attaque le radar à droite !");
         statusLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: darkred;");
     }
