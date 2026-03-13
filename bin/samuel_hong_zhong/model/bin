@@ -1,0 +1,414 @@
+//package school.coda.samuel_hong_zhong.model;
+//
+//import school.coda.samuel_hong_zhong.model.enums.ShipType;
+//
+//import java.util.Arrays;
+//import java.util.Random;
+//
+//public class RandomPlacement {
+//
+//
+//    public static void main(String[] args) {
+//
+//        int x = 10;
+//        int y = 10;
+//
+//        String[][] boardGame = new String[10][10];
+//
+//        boolean failship;
+//
+//        ShipType enterprise = ShipType.ENTERPRISE;
+//        ShipType atago = ShipType.ATAGO;
+//        ShipType yamato = ShipType.YAMATO;
+//        ShipType st_louis = ShipType.ST_LOUIS;
+//        ShipType shoukaku = ShipType.SHOUKAKU;
+//        int enterpriseSize = enterprise.getSize();
+//        int atagoSize = atago.getSize();
+//        int yamatoSize = yamato.getSize();
+//        int stLouisSize = st_louis.getSize();
+//        int shoukakuSize = shoukaku.getSize();
+//
+//            //pour obtenir les coordonnées de la case (x, y) pour placer le bateau
+//        do {
+//            failship = false;
+//            Random random = new Random();
+//
+//            int randX = random.nextInt(10);
+//            int randY = random.nextInt(10);
+//
+//            System.out.println("Coordinates generated: X = " + randX + ", Y = " + randY);
+//
+//            boolean direction = random.nextBoolean();
+//
+//            if (direction) {
+//                // --- HORIZONTAL ---
+//                // 1. On vérifie d'abord si le vaisseau passe sur le tableau
+//                if (randY + enterpriseSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin pour voir s'il y a déjà un bateau
+//                    boolean collision = false;
+//                    for (int i = 0; i < enterpriseSize; i++) {
+//                        if (boardGame[randX][randY + i] != null) {
+//                            collision = true; // Il y a déjà quelque chose ici !
+//                            break; // On arrête l'inspection, on sait que ça a raté
+//                        }
+//                    }
+//
+//                    // 3. On décide quoi faire selon le résultat de l'inspection
+//                    if (!collision) {
+//                        // Pas de collision, la voie est libre ! On place le bateau.
+//                        for (int i = 0; i < enterpriseSize; i++) {
+//                            boardGame[randX][randY + i] = enterprise.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Horizontal) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Horizontal) !");
+//                        failship = true; // On déclenche un nouvel essai
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//
+//            } else {
+//                // --- VERTICAL ---
+//                // 1. On vérifie si le vaisseau passe sur le tableau
+//                if (randX + enterpriseSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin verticalement
+//                    boolean collision = false;
+//                    for (int i = 0; i < enterpriseSize; i++) {
+//                        if (boardGame[randX + i][randY] != null) {
+//                            collision = true;
+//                            break;
+//                        }
+//                    }
+//
+//                    // 3. Placement si pas de collision
+//                    if (!collision) {
+//                        for (int i = 0; i < enterpriseSize; i++) {
+//                            boardGame[randX + i][randY] = enterprise.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Vertical) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Vertical) !");
+//                        failship = true;
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//            }
+//        } while (failship);
+//
+//
+//        do {
+//            failship = false;
+//            Random random = new Random();
+//
+//            int randX = random.nextInt(10);
+//            int randY = random.nextInt(10);
+//
+//            System.out.println("Coordinates generated: X = " + randX + ", Y = " + randY);
+//
+//            boolean direction = random.nextBoolean();
+//
+//            if (direction) {
+//                // --- HORIZONTAL ---
+//                // 1. On vérifie d'abord si le vaisseau passe sur le tableau
+//                if (randY + atagoSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin pour voir s'il y a déjà un bateau
+//                    boolean collision = false;
+//                    for (int i = 0; i < atagoSize; i++) {
+//                        if (boardGame[randX][randY + i] != null) {
+//                            collision = true; // Il y a déjà quelque chose ici !
+//                            break; // On arrête l'inspection, on sait que ça a raté
+//                        }
+//                    }
+//
+//                    // 3. On décide quoi faire selon le résultat de l'inspection
+//                    if (!collision) {
+//                        // Pas de collision, la voie est libre ! On place le bateau.
+//                        for (int i = 0; i < atagoSize; i++) {
+//                            boardGame[randX][randY + i] = atago.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Horizontal) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Horizontal) !");
+//                        failship = true; // On déclenche un nouvel essai
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//
+//            } else {
+//                // --- VERTICAL ---
+//                // 1. On vérifie si le vaisseau passe sur le tableau
+//                if (randX + atagoSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin verticalement
+//                    boolean collision = false;
+//                    for (int i = 0; i < atagoSize; i++) {
+//                        if (boardGame[randX + i][randY] != null) {
+//                            collision = true;
+//                            break;
+//                        }
+//                    }
+//
+//                    // 3. Placement si pas de collision
+//                    if (!collision) {
+//                        for (int i = 0; i < atagoSize; i++) {
+//                            boardGame[randX + i][randY] = atago.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Vertical) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Vertical) !");
+//                        failship = true;
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//            }
+//        } while (failship);
+//
+//
+//        do {
+//            failship = false;
+//            Random random = new Random();
+//
+//            int randX = random.nextInt(10);
+//            int randY = random.nextInt(10);
+//
+//            System.out.println("Coordinates generated: X = " + randX + ", Y = " + randY);
+//
+//            boolean direction = random.nextBoolean();
+//
+//            if (direction) {
+//                // --- HORIZONTAL ---
+//                // 1. On vérifie d'abord si le vaisseau passe sur le tableau
+//                if (randY + yamatoSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin pour voir s'il y a déjà un bateau
+//                    boolean collision = false;
+//                    for (int i = 0; i < yamatoSize; i++) {
+//                        if (boardGame[randX][randY + i] != null) {
+//                            collision = true; // Il y a déjà quelque chose ici !
+//                            break; // On arrête l'inspection, on sait que ça a raté
+//                        }
+//                    }
+//
+//                    // 3. On décide quoi faire selon le résultat de l'inspection
+//                    if (!collision) {
+//                        // Pas de collision, la voie est libre ! On place le bateau.
+//                        for (int i = 0; i < yamatoSize; i++) {
+//                            boardGame[randX][randY + i] = yamato.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Horizontal) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Horizontal) !");
+//                        failship = true; // On déclenche un nouvel essai
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//
+//            } else {
+//                // --- VERTICAL ---
+//                // 1. On vérifie si le vaisseau passe sur le tableau
+//                if (randX + yamatoSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin verticalement
+//                    boolean collision = false;
+//                    for (int i = 0; i < yamatoSize; i++) {
+//                        if (boardGame[randX + i][randY] != null) {
+//                            collision = true;
+//                            break;
+//                        }
+//                    }
+//
+//                    // 3. Placement si pas de collision
+//                    if (!collision) {
+//                        for (int i = 0; i < yamatoSize; i++) {
+//                            boardGame[randX + i][randY] = yamato.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Vertical) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Vertical) !");
+//                        failship = true;
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//            }
+//        } while (failship);
+//
+//
+//        do {
+//            failship = false;
+//            Random random = new Random();
+//
+//            int randX = random.nextInt(10);
+//            int randY = random.nextInt(10);
+//
+//            System.out.println("Coordinates generated: X = " + randX + ", Y = " + randY);
+//
+//            boolean direction = random.nextBoolean();
+//
+//            if (direction) {
+//                // --- HORIZONTAL ---
+//                // 1. On vérifie d'abord si le vaisseau passe sur le tableau
+//                if (randY + stLouisSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin pour voir s'il y a déjà un bateau
+//                    boolean collision = false;
+//                    for (int i = 0; i < stLouisSize; i++) {
+//                        if (boardGame[randX][randY + i] != null) {
+//                            collision = true; // Il y a déjà quelque chose ici !
+//                            break; // On arrête l'inspection, on sait que ça a raté
+//                        }
+//                    }
+//
+//                    // 3. On décide quoi faire selon le résultat de l'inspection
+//                    if (!collision) {
+//                        // Pas de collision, la voie est libre ! On place le bateau.
+//                        for (int i = 0; i < stLouisSize; i++) {
+//                            boardGame[randX][randY + i] = st_louis.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Horizontal) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Horizontal) !");
+//                        failship = true; // On déclenche un nouvel essai
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//
+//            } else {
+//                // --- VERTICAL ---
+//                // 1. On vérifie si le vaisseau passe sur le tableau
+//                if (randX + stLouisSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin verticalement
+//                    boolean collision = false;
+//                    for (int i = 0; i < stLouisSize; i++) {
+//                        if (boardGame[randX + i][randY] != null) {
+//                            collision = true;
+//                            break;
+//                        }
+//                    }
+//
+//                    // 3. Placement si pas de collision
+//                    if (!collision) {
+//                        for (int i = 0; i < stLouisSize; i++) {
+//                            boardGame[randX + i][randY] = st_louis.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Vertical) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Vertical) !");
+//                        failship = true;
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//            }
+//        } while (failship);
+//
+//
+//        do {
+//            failship = false;
+//            Random random = new Random();
+//
+//            int randX = random.nextInt(10);
+//            int randY = random.nextInt(10);
+//
+//            System.out.println("Coordinates generated: X = " + randX + ", Y = " + randY);
+//
+//            boolean direction = random.nextBoolean();
+//
+//            if (direction) {
+//                // --- HORIZONTAL ---
+//                // 1. On vérifie d'abord si le vaisseau passe sur le tableau
+//                if (randY + shoukakuSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin pour voir s'il y a déjà un bateau
+//                    boolean collision = false;
+//                    for (int i = 0; i < shoukakuSize; i++) {
+//                        if (boardGame[randX][randY + i] != null) {
+//                            collision = true; // Il y a déjà quelque chose ici !
+//                            break; // On arrête l'inspection, on sait que ça a raté
+//                        }
+//                    }
+//
+//                    // 3. On décide quoi faire selon le résultat de l'inspection
+//                    if (!collision) {
+//                        // Pas de collision, la voie est libre ! On place le bateau.
+//                        for (int i = 0; i < shoukakuSize; i++) {
+//                            boardGame[randX][randY + i] = shoukaku.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Horizontal) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Horizontal) !");
+//                        failship = true; // On déclenche un nouvel essai
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//
+//            } else {
+//                // --- VERTICAL ---
+//                // 1. On vérifie si le vaisseau passe sur le tableau
+//                if (randX + shoukakuSize <= 10) {
+//
+//                    // 2. NOUVEAU : On "scanne" le chemin verticalement
+//                    boolean collision = false;
+//                    for (int i = 0; i < shoukakuSize; i++) {
+//                        if (boardGame[randX + i][randY] != null) {
+//                            collision = true;
+//                            break;
+//                        }
+//                    }
+//
+//                    // 3. Placement si pas de collision
+//                    if (!collision) {
+//                        for (int i = 0; i < shoukakuSize; i++) {
+//                            boardGame[randX + i][randY] = shoukaku.getName();
+//                        }
+//                        System.out.println("Vaisseau placé avec succès (Vertical) !");
+//                    } else {
+//                        System.out.println("Erreur : Chevauchement détecté (Vertical) !");
+//                        failship = true;
+//                    }
+//
+//                } else {
+//                    System.out.println("Erreur : Le vaisseau sort du plateau en (" + randX + ", " + randY + ")");
+//                    failship = true;
+//                }
+//            }
+//        } while (failship);
+//
+//
+//        }
+//    }
+//
+//
+//
+//
+//
+//

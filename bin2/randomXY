@@ -1,0 +1,10 @@
+//        Board board = new Board();
+//
+//        Random rand = new Random();
+//
+//        int y = rand.nextInt(board.getHauteur());
+//        int x   = rand.nextInt(board.getLargeur());
+//
+//        // false = horizontal
+//        boolean direction = false;
+//        board.placerBateau(x,y, ShipType.SHOUKAKU, direction);
