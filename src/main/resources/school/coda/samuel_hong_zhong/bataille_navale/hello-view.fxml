@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
+<!-- 🚨 Code mort (jamais utilisé) -->
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="school.coda.samuel_hong_zhong.bataille_navale.HelloController">
     <padding>

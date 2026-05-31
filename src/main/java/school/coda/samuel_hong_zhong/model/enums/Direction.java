@@ -2,6 +2,7 @@ package school.coda.samuel_hong_zhong.model.enums;
 
 import java.util.Random;
 
+// 🚨 Code mort (non utilisé)
 public enum Direction {
     HORIZONTAL("h"),
     VERTICAL("v");

@@ -14,6 +14,7 @@ public class Play {
     private interactionPlayer playerLogic;
     private String[][] computerBoard;
     private boolean isAttackPhase;
+    // 🚨 Code mort (non utilisé)
     private boolean end;
     public int playerTouchCount;
     public int comTouchCount;
@@ -25,6 +26,7 @@ public class Play {
 
     // UI Components
     private Button[][] playerButtons;
+    // 🚨 Code mort (non utilisé)
     private Button[][] computerButtons;
     private Label statusLabel;
     private HBox controls;
