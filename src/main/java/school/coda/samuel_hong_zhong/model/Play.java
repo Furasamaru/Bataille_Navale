@@ -24,6 +24,9 @@ public class Play {
     private boolean[][] computerShots; // Mémorise où l'ordi a déjà tiré
     private Random random;
 
+    // 🚨 La logique écran est entremélée de la logique métier
+    // Le code de présentation (GUI) pourrait être un peu plus séparée du moteur de jeu
+
     // UI Components
     // 💡 Nom pourrait être amélioré : playerCells
     private Button[][] playerButtons;
