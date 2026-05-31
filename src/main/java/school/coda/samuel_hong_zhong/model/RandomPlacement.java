@@ -33,6 +33,8 @@ public class RandomPlacement {
                 failship = false;
                 int randX = random.nextInt(10);
                 int randY = random.nextInt(10);
+                // 💡 Pourrait retourner une enum Direction.HORIZONTAL ou Direction.VERTICAL
+                // D'ailleurs, ce code existe déjà dans l'enum `Direction`
                 boolean direction = random.nextBoolean();
 
                 if (direction) { // HORIZONTAL
