@@ -45,6 +45,8 @@ public class interactionPlayer {
     }
 
     // --- PLACEMENT LOGIC ---
+    // 🚨 Il y a un implicite qui n'est pas mentionné
+    // Le vaisseau qu'on tente de placer est le vaisseau courant
     /**
      * Attempts to place a ship. Returns true if successful, false if invalid.
      */
