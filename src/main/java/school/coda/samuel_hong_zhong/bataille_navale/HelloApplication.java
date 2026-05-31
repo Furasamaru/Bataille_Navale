@@ -12,6 +12,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import school.coda.samuel_hong_zhong.model.Play;
 
+// 💡 Le la classe pourrait être renommée
+// pour indiquer que c'est une bataille navale
 public class HelloApplication extends Application {
 
     // UI Elements

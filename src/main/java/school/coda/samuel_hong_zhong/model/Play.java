@@ -25,6 +25,7 @@ public class Play {
     private Random random;
 
     // UI Components
+    // 💡 Nom pourrait être amélioré : playerCells
     private Button[][] playerButtons;
     // 🚨 Code mort (non utilisé)
     private Button[][] computerButtons;
@@ -46,6 +47,9 @@ public class Play {
 
     // --- BUTTON CONTROLS ---
 
+    // 🚨 nom pourrait être amélioré : setDirection
+    // Possibilité d'utiliser une enum pour améliorer
+    // la lisibilité Direction.HORIZONTAL, Direction.VERTICAL
     public void setHorizontal(boolean isHorizontal) {
         playerLogic.setHorizontal(isHorizontal);
         updateStatusText();
@@ -75,6 +79,8 @@ public class Play {
         }
     }
 
+    // 💡 nom pourrait être plus clair
+    // ex. handleRadarGridCellClick()
     public void handleComputerCellClick(int row, int col, Button clickedButton) {
         //On empêche le joueur de cliquer si ce n'est pas son tour
         if (!isAttackPhase || !isPlayerTurn) {

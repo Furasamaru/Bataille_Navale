@@ -1,5 +1,6 @@
 package school.coda.samuel_hong_zhong.model;
 
+// 🚨 Convention de nommage : les noms de classes commencent par une majuscule
 public class interactionPlayer {
 
     private static final int BOARD_SIZE = 10;
@@ -17,6 +18,9 @@ public class interactionPlayer {
 
     // --- GETTERS & SETTERS ---
     public boolean isHorizontal() { return isHorizontal; }
+    // 🚨 nom pourrait être amélioré : setDirection
+    // Possibilité d'utiliser une enum pour améliorer
+    // la lisibilité Direction.HORIZONTAL, Direction.VERTICAL
     public void setHorizontal(boolean horizontal) { isHorizontal = horizontal; }
     public boolean isAllShipsPlaced() { return currentShipIndex >= SHIP_SIZES.length; }
     public String[][] getBoard() { return board; }
