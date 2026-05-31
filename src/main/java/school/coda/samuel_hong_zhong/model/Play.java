@@ -65,6 +65,12 @@ public class Play {
         boolean isHoriz = playerLogic.isHorizontal();
 
         if (playerLogic.attemptPlacement(row, col)) {
+            // La logique qui permet de connaitre les cases occupées par le vaisseau
+            // pourraient être encapsulées dans un objet plus approprié
+            // Ex. Vaisseau, Grille
+            //
+            // ou encore retournées par la méthode playerLogic.attemptPlacement().
+            // Ex. en retournant un Optional d'un objet contenant les infos du vaisseau et ses coordonnées
             for (int i = 0; i < size; i++) {
                 int r = isHoriz ? row : row + i;
                 int c = isHoriz ? col + i : col;
