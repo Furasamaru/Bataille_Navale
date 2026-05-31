@@ -100,6 +100,7 @@ public class Play {
                 statusLabel.setText("BOUM ! Tu as touché un bateau non identifié !");
 
         }
+        // 🚨 Que signifie la valeur en dur 17 ?
         if (playerTouchCount >= 17){
             end = true;
             return;
