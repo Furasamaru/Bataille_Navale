@@ -20,6 +20,9 @@ public class RandomPlacement {
         };
 
         for (ShipType navire : maFlotte) {
+            // 💡 nommage pourrait être plus clair
+            // ex. boolean incorrectPlacement
+            // ex. boolean correctPlacement
             boolean failship;
             int size = navire.getSize();
 

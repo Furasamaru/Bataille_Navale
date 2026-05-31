@@ -19,6 +19,8 @@ public class interactionPlayer {
     // 💡 Le commentaire n'est pas nécessaire
     // La convention de nommage indique que c'est
     // des getters et setters
+    // 💡 Je recommande de mettre les getters et setters en fin de classe car on veut voir le code
+    // le plus important (la logique) le plus tôt possible
     // --- GETTERS & SETTERS ---
     public boolean isHorizontal() { return isHorizontal; }
     // 🚨 nom pourrait être amélioré : setDirection
