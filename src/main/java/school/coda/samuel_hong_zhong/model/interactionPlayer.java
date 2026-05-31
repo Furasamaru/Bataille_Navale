@@ -16,6 +16,9 @@ public class interactionPlayer {
         this.board = new String[BOARD_SIZE][BOARD_SIZE];
     }
 
+    // 💡 Le commentaire n'est pas nécessaire
+    // La convention de nommage indique que c'est
+    // des getters et setters
     // --- GETTERS & SETTERS ---
     public boolean isHorizontal() { return isHorizontal; }
     // 🚨 nom pourrait être amélioré : setDirection
@@ -44,6 +47,7 @@ public class interactionPlayer {
 
         int size = SHIP_SIZES[currentShipIndex];
 
+        // 🤖 commentaire IA ?
         // 1. Check if the ship goes out of bounds
         if (isHorizontal) {
             if (col + size > BOARD_SIZE) return false;
@@ -51,6 +55,7 @@ public class interactionPlayer {
             if (row + size > BOARD_SIZE) return false;
         }
 
+        // 🤖 commentaire IA ?
         // 2. Check if the path overlaps with an existing ship
         for (int i = 0; i < size; i++) {
             if (isHorizontal) {
@@ -60,6 +65,7 @@ public class interactionPlayer {
             }
         }
 
+        // 🤖 commentaire IA ?
         // 3. If valid, place the ship on the logical board
         for (int i = 0; i < size; i++) {
             if (isHorizontal) {

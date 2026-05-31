@@ -17,6 +17,9 @@ import school.coda.samuel_hong_zhong.model.Play;
 public class HelloApplication extends Application {
 
     // UI Elements
+    // 🚨 documentation manquante pour indiquer
+    // que les cases des grilles océan (player) et radar (computer)
+    // sont matérialisés par des boutons
     private Button[][] playerButtons = new Button[10][10];
     private Button[][] computerButtons = new Button[10][10];
     private Label statusLabel;
