@@ -5,6 +5,9 @@ import java.util.Random;
 
 public class RandomPlacement {
 
+    // 🚨 Commentaire non nécessaire dans le code
+    // devrait plutôt être dans un message de commit
+
     // Changed from "main" to "generateBoard" so other classes can use it
     public static String[][] generateBoard() {
 
