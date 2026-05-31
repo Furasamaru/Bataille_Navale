@@ -4,6 +4,10 @@ package school.coda.samuel_hong_zhong.model;
 public class interactionPlayer {
 
     private static final int BOARD_SIZE = 10;
+    // 💡 On pourrait utiliser l'enum ShipType
+    // Qui encapsule en même temps type et taille de vaisseau
+    // Ex. 👇
+    // private static final ShipType[] SHIPS_TO_PLACE={ShipType.ENTERPRISE,ShipType.ATAGO,ShipType.SHOUKAKU,ShipType.ST_LOUIS,ShipType.SHOUKAKU};
     private static final String[] SHIP_TYPES = {"Aircraft Carrier", "Battleship", "Cruiser", "Submarine", "Destroyer"};
     private static final int[] SHIP_SIZES = {5, 4, 3, 3, 2};
 
