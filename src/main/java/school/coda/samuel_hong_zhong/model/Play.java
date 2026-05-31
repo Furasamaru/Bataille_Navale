@@ -112,7 +112,7 @@ public class Play {
         isPlayerTurn = false;
 
         // On crée une pause de 1 seconde pour le suspense
-        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        PauseTransition pause = new PauseTransition(Duration.millis(100));
         pause.setOnFinished(event -> computerTurn());
         pause.play();
     }
