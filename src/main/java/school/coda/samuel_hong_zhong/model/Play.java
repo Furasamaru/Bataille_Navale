@@ -45,6 +45,8 @@ public class Play {
         this.isAttackPhase = false;
         this.isPlayerTurn = true; // Le joueur commence toujours
         this.computerShots = new boolean[10][10];
+        // 👍 L'aléatoire est instancié une seule fois
+        // Ce qui est meilleur pour les performances
         this.random = new Random();
     }
 
