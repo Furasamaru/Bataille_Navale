@@ -1,5 +1,0 @@
-package school.coda.samuel_hong_zhong.model;
-
-public record Coordinate(int i , int j) {
-
-}

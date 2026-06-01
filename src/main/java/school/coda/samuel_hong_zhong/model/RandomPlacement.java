@@ -1,6 +1,7 @@
 package school.coda.samuel_hong_zhong.model;
 
 import school.coda.samuel_hong_zhong.model.enums.ShipType;
+
 import java.util.Random;
 
 public class RandomPlacement {

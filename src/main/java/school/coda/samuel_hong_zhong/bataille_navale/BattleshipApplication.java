@@ -14,7 +14,7 @@ import school.coda.samuel_hong_zhong.model.Play;
 
 // 💡 Le la classe pourrait être renommée
 // pour indiquer que c'est une bataille navale
-public class HelloApplication extends Application {
+public class BattleshipApplication extends Application {
 
     // UI Elements
     // 🚨 documentation manquante pour indiquer
@@ -45,7 +45,7 @@ public class HelloApplication extends Application {
 
         // --- 2. INITIALIZE CONTROLLER ---
         // We pass the UI elements so Play can change their colors/text
-        playController = new Play(playerButtons, computerButtons, statusLabel, controls);
+        playController = new Play(playerButtons, statusLabel, controls);
 
         // Bind orientation buttons to the controller
         btnHoriz.setOnAction(e -> playController.setHorizontal(true));

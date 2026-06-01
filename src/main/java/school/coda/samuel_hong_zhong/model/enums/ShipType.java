@@ -1,5 +1,4 @@
 package school.coda.samuel_hong_zhong.model.enums;
-import java.util.Random;
 
 public enum ShipType {
     ENTERPRISE("Porte-avions", 5),
@@ -10,8 +9,6 @@ public enum ShipType {
 
     private final String name;
     private final int size;
-//    private static final ShipType[] VALUES = values();
-//    private static final Random RANDOM = new Random();
 
     ShipType(String name, int size) {
         this.name = name;
@@ -25,9 +22,4 @@ public enum ShipType {
     public int getSize() {
         return size;
     }
-
-//    public static ShipType getRandomShip() {
-//        return VALUES[RANDOM.nextInt(VALUES.length)];
-////          return getRandomShip(ShipType.valueOf("") + (ShipType.GetSize);
-//    }
 }

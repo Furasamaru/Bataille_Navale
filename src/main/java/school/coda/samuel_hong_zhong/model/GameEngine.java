@@ -1,7 +1,7 @@
 package school.coda.samuel_hong_zhong.model;
 
 // 🚨 Convention de nommage : les noms de classes commencent par une majuscule
-public class interactionPlayer {
+public class GameEngine {
 
     private static final int BOARD_SIZE = 10;
     // 💡 On pourrait utiliser l'enum ShipType
@@ -16,7 +16,7 @@ public class interactionPlayer {
     private int currentShipIndex = 0;
     private boolean isHorizontal = true;
 
-    public interactionPlayer() {
+    public GameEngine() {
         this.board = new String[BOARD_SIZE][BOARD_SIZE];
     }
 
@@ -26,13 +26,24 @@ public class interactionPlayer {
     // 💡 Je recommande de mettre les getters et setters en fin de classe car on veut voir le code
     // le plus important (la logique) le plus tôt possible
     // --- GETTERS & SETTERS ---
-    public boolean isHorizontal() { return isHorizontal; }
+    public boolean isHorizontal() {
+        return isHorizontal;
+    }
+
     // 🚨 nom pourrait être amélioré : setDirection
     // Possibilité d'utiliser une enum pour améliorer
     // la lisibilité Direction.HORIZONTAL, Direction.VERTICAL
-    public void setHorizontal(boolean horizontal) { isHorizontal = horizontal; }
-    public boolean isAllShipsPlaced() { return currentShipIndex >= SHIP_SIZES.length; }
-    public String[][] getBoard() { return board; }
+    public void setHorizontal(boolean horizontal) {
+        isHorizontal = horizontal;
+    }
+
+    public boolean isAllShipsPlaced() {
+        return currentShipIndex >= SHIP_SIZES.length;
+    }
+
+    public String[][] getBoard() {
+        return board;
+    }
 
     public String getCurrentShipName() {
         if (isAllShipsPlaced()) return "None";
@@ -47,6 +58,7 @@ public class interactionPlayer {
     // --- PLACEMENT LOGIC ---
     // 🚨 Il y a un implicite qui n'est pas mentionné
     // Le vaisseau qu'on tente de placer est le vaisseau courant
+
     /**
      * Attempts to place a ship. Returns true if successful, false if invalid.
      */

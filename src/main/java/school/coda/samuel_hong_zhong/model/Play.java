@@ -11,10 +11,10 @@ import java.util.Random;
 public class Play {
 
     // Logic Models
-    private interactionPlayer playerLogic;
+    private GameEngine playerLogic;
     private String[][] computerBoard;
     private boolean isAttackPhase;
-    // 🚨 Code mort (non utilisé)
+    // Cet attribut n'est pas utilisé
     private boolean end;
     public int playerTouchCount;
     public int comTouchCount;
@@ -30,15 +30,12 @@ public class Play {
     // UI Components
     // 💡 Nom pourrait être amélioré : playerCells
     private Button[][] playerButtons;
-    // 🚨 Code mort (non utilisé)
-    private Button[][] computerButtons;
     private Label statusLabel;
     private HBox controls;
 
-    public Play(Button[][] playerButtons, Button[][] computerButtons, Label statusLabel, HBox controls) {
-        this.playerLogic = new interactionPlayer();
+    public Play(Button[][] playerButtons, Label statusLabel, HBox controls) {
+        this.playerLogic = new GameEngine();
         this.playerButtons = playerButtons;
-        this.computerButtons = computerButtons;
         this.statusLabel = statusLabel;
         this.controls = controls;
 
@@ -108,11 +105,11 @@ public class Play {
             clickedButton.setStyle("-fx-background-color: #FF4500; -fx-text-fill: white; -fx-font-weight: bold;");
             clickedButton.setText("X");
             playerTouchCount = playerTouchCount + 1;
-                statusLabel.setText("BOUM ! Tu as touché un bateau non identifié !");
+            statusLabel.setText("BOUM ! Tu as touché un bateau non identifié !");
 
         }
         // 🚨 Que signifie la valeur en dur 17 ?
-        if (playerTouchCount >= 17){
+        if (playerTouchCount >= 17) {
             end = true;
             return;
         }
@@ -123,7 +120,7 @@ public class Play {
         isPlayerTurn = false;
 
         // On crée une pause de 1 seconde pour le suspense
-        PauseTransition pause = new PauseTransition(Duration.millis(100));
+        PauseTransition pause = new PauseTransition(Duration.millis(1));
         pause.setOnFinished(event -> computerTurn());
         pause.play();
     }
@@ -167,7 +164,6 @@ public class Play {
         // 5. C'est de nouveau à toi de jouer
         isPlayerTurn = true;
     }
-
 
 
     // --- GAME STATE MANAGEMENT ---
